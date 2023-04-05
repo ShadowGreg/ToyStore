@@ -4,6 +4,7 @@ public abstract class BaseToy {
     int id;
     int weight;
     String name;
+    public BaseToy(){}
 
     public BaseToy(int id, int weight, String name) {
         this.id = id;
