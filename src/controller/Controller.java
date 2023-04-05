@@ -1,18 +1,17 @@
 package controller;
 
-import core.BaseToy;
+import core.Toyable;
 import view.Viewable;
 
-public class Controller<A extends Viewable, B extends BaseToy > {
-    Viewable view;
-    BaseToy toy;
+public class Controller<T extends Toyable> {
+    private Viewable view;
+    private Toyable toy;
 
-    public Controller(Viewable view, BaseToy toy) {
+    public Controller(Viewable view) {
         this.view = view;
-        this.toy = toy;
     }
 
-    public void run(){
+    public void run() {
 
     }
 }

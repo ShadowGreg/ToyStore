@@ -1,10 +1,9 @@
 package core;
 
-public abstract class BaseToy {
-    int id;
-    int weight;
-    String name;
-    public BaseToy(){}
+public class BaseToy implements Toyable {
+    private int id;
+    private int weight;
+    private String name;
 
     public BaseToy(int id, int weight, String name) {
         this.id = id;
