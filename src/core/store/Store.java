@@ -32,14 +32,16 @@ public class Store implements Storeble{
         int index = 0;
         for (PriorityQueue<Toyable> item : shelvesToys) {
             index++;
-            Toyable temp = item.element();
-            if (item.element().equals(inToy)) {
-                if (item.size() == 1) {
-                    shelvesToys.remove(index);
-                    toys.remove(inToy);
+            if (item.size()!=0){
+                Toyable temp = item.element();
+                if (item.element().equals(inToy)) {
+                    if (item.size() == 1) {
+                        shelvesToys.remove(index);
+                        toys.remove(inToy);
+                    }
+                    item.remove();
+                    return inToy;
                 }
-                item.remove();
-                return inToy;
             }
         }
         return null;

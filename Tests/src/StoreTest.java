@@ -48,7 +48,6 @@ public class StoreTest {
         Assert.assertEquals(expectedToy, actualToy);
     }
 
-
     @Test
     public void GetToy_when_is_the_last_toy_in_queue_test() {
         Setup();
@@ -57,6 +56,18 @@ public class StoreTest {
         Toyable actualToy = store.GetToy(expectedToy);
 
         Assert.assertEquals(expectedToy, actualToy);
+    }
+
+
+    @Test
+    public void GetToy_when_is_the_null_toy_in_queue_test() {
+        Setup();
+        Toyable expectedToy = new Toys(2, "трэк", 30, 1);
+
+        Toyable actualToy = store.GetToy(expectedToy);
+        actualToy = store.GetToy(expectedToy);
+
+        Assert.assertEquals(null, actualToy);
     }
 
     @Test

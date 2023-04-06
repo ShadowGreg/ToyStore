@@ -12,7 +12,7 @@ public class Lottery {
     private List<Toyable> toys;
     private List<Toyable> arrayForGetToys;
 
-    private Random rnd;
+    private Random rnd = new Random();
 
     public Lottery(Storeble store) {
         this.store = store;

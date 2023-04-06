@@ -43,4 +43,9 @@ public class Toys extends BaseToy implements Toyable, Comparable<BaseToy> {
         hash = 53 * hash + (super.getClass() != null ? this.getId() : 0);
         return hash;
     }
+
+    @Override
+    public void ReduceAmount() {
+        this.quantity--;
+    }
 }

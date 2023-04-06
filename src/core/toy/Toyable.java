@@ -13,4 +13,6 @@ public interface Toyable {
     public boolean equals(Object obj);
 
     public int hashCode();
+
+    public void ReduceAmount();
 }
