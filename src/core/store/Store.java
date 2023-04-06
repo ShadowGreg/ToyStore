@@ -3,6 +3,7 @@ package core.store;
 import core.toy.Toyable;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.stream.IntStream;
@@ -13,7 +14,7 @@ public class Store implements Storeble{
     private List<PriorityQueue<Toyable>> shelvesToys;
 
     public Store(List<Toyable> toys) {
-        this.toys = toys;
+        this.toys = new LinkedList<>(toys);
         shelvesToys = new ArrayList<>();
         FillShelvesToys(toys);
     }

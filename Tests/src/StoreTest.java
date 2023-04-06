@@ -1,5 +1,4 @@
 import core.store.Store;
-import core.toy.BaseToy;
 import core.toy.Toyable;
 import core.toy.Toys;
 import org.junit.Assert;
