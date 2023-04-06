@@ -1,9 +1,9 @@
 import controller.Controller;
-import core.toy.BaseToy;
+import core.toy.Toys;
 import view.View;
 
 public class Main {
     public static void main(String[] args) {
-        new Controller<BaseToy>(new View()).run();
+        new Controller<Toys>(new View()).run();
     }
 }

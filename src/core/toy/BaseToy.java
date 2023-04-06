@@ -1,28 +1,22 @@
 package core.toy;
 
-public class BaseToy implements Toyable {
+public class BaseToy {
 
     private final int id;
     private final String name;
-    private final int quantity;
     private int weight;
 
-    public BaseToy(int id, String name, int quantity, int weight) {
+    public BaseToy(int id, String name, int weight) {
         this.id = id;
         this.name = name;
-        this.quantity = quantity;
         this.weight = weight;
-    }
-
-    public int getQuantity() {
-        return quantity;
     }
 
     public int getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(int inWeight) {
         this.weight = weight;
     }
 
