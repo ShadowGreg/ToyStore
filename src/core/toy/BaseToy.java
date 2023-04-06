@@ -1,6 +1,8 @@
 package core.toy;
 
+
 public class BaseToy {
+
 
     private final int id;
     private final String name;
@@ -12,21 +14,24 @@ public class BaseToy {
         this.weight = weight;
     }
 
+    public int getId() {
+        return id;
+    }
     public int getWeight() {
         return weight;
     }
 
     public void setWeight(int inWeight) {
-        this.weight = weight;
+        this.weight = inWeight;
     }
 
 
     @Override
     public String toString() {
-        return "BaseToy{" +
-                "id=" + id +
+        return  "id=" + id +
                 ", name='" + name + '\'' +
-                ", weight=" + weight +
-                '}';
+                ", weight=" + weight ;
     }
+
+
 }

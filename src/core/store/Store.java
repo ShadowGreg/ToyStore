@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.stream.IntStream;
 
-public class Store implements Storeble {
+public class Store implements Storeble{
 
     private List<Toyable> toys;
     private List<PriorityQueue<Toyable>> shelvesToys;
@@ -31,11 +31,13 @@ public class Store implements Storeble {
         int index = 0;
         for (PriorityQueue<Toyable> item : shelvesToys) {
             index++;
-            if (item.element() == inToy) {
+            Toyable temp = item.element();
+            if (item.element().equals(inToy)) {
                 if (item.size() == 1) {
                     shelvesToys.remove(index);
                     toys.remove(inToy);
                 }
+                item.remove();
                 return inToy;
             }
         }
@@ -44,11 +46,11 @@ public class Store implements Storeble {
 
     private void FillShelvesToys(List<Toyable> toys) {
         for (Toyable item : toys) {
-            shelvesToys.add(GetToysQueue(item));
+            shelvesToys.add(FillToysQueue(item));
         }
     }
 
-    private PriorityQueue<Toyable> GetToysQueue(Toyable item) {
+    private PriorityQueue<Toyable> FillToysQueue(Toyable item) {
         PriorityQueue<Toyable> out = new PriorityQueue<>();
         for (int i = 0; i < item.getQuantity(); i++) {
             out.add(item);
@@ -97,4 +99,5 @@ public class Store implements Storeble {
             }
         }
     }
+
 }
