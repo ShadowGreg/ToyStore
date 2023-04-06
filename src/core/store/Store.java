@@ -8,14 +8,14 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.stream.IntStream;
 
-public class Store implements Storeble{
+public class Store implements Storeble {
 
     private List<Toyable> toys;
     private List<PriorityQueue<Toyable>> shelvesToys;
 
     public Store(List<Toyable> toys) {
         this.toys = new LinkedList<>(toys);
-        shelvesToys = new ArrayList<>();
+        shelvesToys = new LinkedList<>();
         FillShelvesToys(toys);
     }
 
@@ -30,24 +30,29 @@ public class Store implements Storeble{
 
     public Toyable GetToy(Toyable inToy) {
         int index = 0;
-        for (PriorityQueue<Toyable> item : shelvesToys) {
-            index++;
-            if (item.size()!=0){
-                Toyable temp = item.element();
-                if (item.element().equals(inToy)) {
-                    if (item.size() == 1) {
-                        shelvesToys.remove(index);
-                        toys.remove(inToy);
+        int saveIndex = -1;
+        if (this.toys.contains(inToy)) {
+            for (Toyable item : this.toys) {
+                index++;
+                if (item.equals(inToy)) {
+                    item.ReduceAmount();
+                    FillShelvesToys(this.toys);
+                    if (item.getQuantity() == 0) {
+                        saveIndex = index;
                     }
-                    item.remove();
-                    return inToy;
                 }
             }
+            if (saveIndex != -1 && this.toys.get(saveIndex).getQuantity() == 0) {
+                this.toys.remove(saveIndex);
+            }
+
+            return inToy;
         }
         return null;
     }
 
     private void FillShelvesToys(List<Toyable> toys) {
+        shelvesToys = new LinkedList<>();
         for (Toyable item : toys) {
             shelvesToys.add(FillToysQueue(item));
         }
