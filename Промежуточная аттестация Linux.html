@@ -1,0 +1,344 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Промежуточная аттестация</title>
+    <style>
+        /* cspell:disable-file */
+        /* webkit printing magic: print all background colors */
+        html {
+            -webkit-print-color-adjust: exact;
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        @media only screen {
+            body {
+                margin: 2em auto;
+                max-width: 900px;
+                color: rgb(55, 53, 47);
+            }
+        }
+
+        body {
+            line-height: 1.5;
+            white-space: pre-wrap;
+        }
+
+        h1,
+        h2,
+        h3 {
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 0.75em;
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            margin-top: 1.875rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        figure {
+            margin: 1.25em 0;
+            page-break-inside: avoid;
+        }
+
+        figcaption {
+            opacity: 0.5;
+            font-size: 85%;
+            margin-top: 0.5em;
+        }
+
+        mark {
+            background-color: transparent;
+        }
+
+        hr {
+            background: transparent;
+            display: block;
+            width: 100%;
+            height: 1px;
+            visibility: visible;
+            border: none;
+            border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        @media only print {
+            img {
+                max-height: 100vh;
+                object-fit: contain;
+            }
+        }
+
+        @page {
+            margin: 1in;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid rgba(55, 53, 47, 0.09);
+            border-collapse: collapse;
+        }
+
+        table {
+            border-left: none;
+            border-right: none;
+        }
+
+        th,
+        td {
+            font-weight: normal;
+            padding: 0.25em 0.5em;
+            line-height: 1.5;
+            min-height: 1.5em;
+            text-align: left;
+        }
+
+        th {
+            color: rgba(55, 53, 47, 0.6);
+        }
+
+        ol,
+        ul {
+            margin: 0;
+            margin-block-start: 0.6em;
+            margin-block-end: 0.6em;
+        }
+
+        li > ol:first-child,
+        li > ul:first-child {
+            margin-block-start: 0.6em;
+        }
+
+        ul > li {
+            list-style: disc;
+        }
+
+        ul.to-do-list > li {
+            list-style: none;
+        }
+
+        ul.toggle > li {
+            list-style: none;
+        }
+
+        ul {
+            padding-inline-start: 1.7em;
+        }
+
+        ul > li {
+            padding-left: 0.1em;
+        }
+
+        ol {
+            padding-inline-start: 1.6em;
+        }
+
+        ol > li {
+            padding-left: 0.2em;
+        }
+
+        .mono ol {
+            padding-inline-start: 2em;
+        }
+
+        .mono ol > li {
+            text-indent: -0.4em;
+        }
+
+        /* Indent toggle children */
+        .toggle > li > details {
+            padding-left: 1.7em;
+        }
+
+        .toggle > li > details > summary {
+            margin-left: -1.1em;
+        }
+
+        .simple-table {
+            margin-top: 1em;
+            font-size: 0.875rem;
+            empty-cells: show;
+        }
+
+        .simple-table td {
+            height: 29px;
+            min-width: 120px;
+        }
+
+        .simple-table th {
+            height: 29px;
+            min-width: 120px;
+        }
+
+
+        time {
+            opacity: 0.5;
+        }
+
+
+        .page-header-icon img {
+            border-radius: 3px;
+        }
+
+        p {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+        num {
+            align-content: center;
+        }
+
+        code {
+            color: #eb5757;
+        }
+
+
+        .code > code {
+            background: none;
+            padding: 0;
+            font-size: 100%;
+            color: inherit;
+        }
+
+        blockquote {
+            font-size: 1.25em;
+            margin: 1em 0;
+            padding-left: 1em;
+            border-left: 3px solid rgb(55, 53, 47);
+        }
+
+
+        .sans {
+            font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        .pdf .sans {
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP';
+        }
+
+        .pdf:lang(zh-CN) .sans {
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC';
+        }
+
+        .pdf:lang(zh-TW) .sans {
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC';
+        }
+
+        .pdf:lang(ko-KR) .sans {
+            font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR';
+        }
+
+    </style>
+</head>
+<body>
+<article id="0be8bb01-6410-49cf-9113-dba02ab31e99" class="page sans">
+    <header><h1 class="page-title">Промежуточная аттестация</h1></header>
+    <div class="page-body">
+        <table id="dcf20c37-39ca-451c-8fda-3b2c4ed1496d" class="simple-table">
+            <tbody>
+            <tr id="7ed5d450-c3a7-4184-9e0d-097a565b1f5d">
+                <td id="num" class="" style="width:40.65625px">1</td>
+                <td id="tTts" class="" style="width:232.66666666666666px">Используйте команды операционной системы Linux
+                    и создайте две новых директории – «Игрушки для школьников» и «Игрушки для дошколят»
+                </td>
+                <td id="woZR" class="" style="width:493.65625px">sudo mkdir -p Игрушки\ для\ школьников/ Игрушки\ для\
+                    дошколят/
+                </td>
+            </tr>
+            <tr id="d81b2aa1-579e-4843-9878-3085f89062c0">
+                <td id="num" class="" style="width:40.65625px">2</td>
+                <td id="tTts" class="" style="width:232.66666666666666px">Создайте в директории «Игрушки для школьников»
+                    текстовые файлы - «Роботы», «Конструктор», «Настольные игры»
+                </td>
+                <td id="woZR" class="" style="width:493.65625px">cd Игрушки\ для\ школьников/ sudo touch Роботы.txt
+                    Конструктор.txt Настольные\ игры.txt
+                </td>
+            </tr>
+            <tr id="bbc681f3-490e-4323-a3f4-bb7ddb36d18a">
+                <td id="num" class="" style="width:40.65625px">3</td>
+                <td id="tTts" class="" style="width:232.66666666666666px">Создайте в директории «Игрушки для дошколят»
+                    текстовые файлы «Мягкие игрушки», «Куклы», «Машинки»
+                </td>
+                <td id="woZR" class="" style="width:493.65625px">cd .. cd Игрушки\ для\ дошколят/ sudo touch Мягкие\
+                    игрушки.txt Куклы.txt Машинки.txt
+                </td>
+            </tr>
+            <tr id="6d69739d-0b48-4cb8-8941-cec949ae9084">
+                <td id="num" class="" style="width:40.65625px">4</td>
+                <td id="tTts" class="" style="width:232.66666666666666px">Объединить 2 директории в одну «Имя Игрушки»
+                </td>
+                <td id="woZR" class="" style="width:493.65625px">sudo mkdir Имя\ Игрушки/ sudo mv Игрушки\ для\
+                    школьников Игрушки\ для\ дошколят Имя\ Игрушки/
+                </td>
+            </tr>
+            <tr id="9e9ed6b4-188c-49a9-b99c-990cbd91c3ef">
+                <td id="num" class="" style="width:40.65625px">5</td>
+                <td id="tTts" class="" style="width:232.66666666666666px">Переименовать директорию «Имя Игрушки» в
+                    «Игрушки»
+                </td>
+                <td id="woZR" class="" style="width:493.65625px">sudo mv Имя\ Игрушки Игрушки</td>
+            </tr>
+            <tr id="896af014-9e79-4b96-bd0e-921b20545ab7">
+                <td id="num" class="" style="width:40.65625px">6</td>
+                <td id="tTts" class="" style="width:232.66666666666666px">Просмотреть содержимое каталога «Игрушки».
+                </td>
+                <td id="woZR" class="" style="width:493.65625px">cd Игрушки/ &amp;&amp; ll</td>
+            </tr>
+            <tr id="78add49d-cbd5-40ec-919e-291ed0468ba9">
+                <td id="num" class="" style="width:40.65625px">7</td>
+                <td id="tTts" class="" style="width:232.66666666666666px">Установить и удалить snap-пакет.
+                </td>
+                <td id="woZR" class="" style="width:493.65625px">sudo snap install intellij-idea-ultimate --classic sudo
+                    snap remove intellij-idea-ultimate
+                </td>
+            </tr>
+            <tr id="967d56e0-2ed2-43a3-b824-682282be0a4c">
+                <td id="num" class="" style="width:40.65625px">8</td>
+                <td id="tTts" class="" style="width:232.66666666666666px">Добавить задачу для выполнения каждые 3 минуты
+                    (запись во все
+                    файлы).
+                </td>
+                <td id="woZR" class="" style="width:493.65625px">sudo crontab -e /3 * * * * command &gt;&gt;
+                    /path/to/file1 &amp;&amp; command &gt;&gt; /path/to/file2 &amp;&amp; command &gt;&gt; /path/to/file3
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <p id="4bb21ddc-2791-4335-a6b7-3c470a42c691" class="">
+        </p></div>
+</article>
+</body>
+</html>

@@ -1,6 +1,6 @@
 package controller;
 
-import core.Toyable;
+import core.toy.Toyable;
 import view.Viewable;
 
 public class Controller<T extends Toyable> {

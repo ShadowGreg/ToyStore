@@ -1,4 +1,4 @@
-package core;
+package core.toy;
 
 public interface Toyable {
 }

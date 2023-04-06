@@ -1,5 +1,5 @@
 import controller.Controller;
-import core.BaseToy;
+import core.toy.BaseToy;
 import view.View;
 
 public class Main {
