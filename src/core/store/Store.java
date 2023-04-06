@@ -11,12 +11,10 @@ import java.util.stream.IntStream;
 public class Store implements Storeble {
 
     private List<Toyable> toys;
-    private List<PriorityQueue<Toyable>> shelvesToys;
+
 
     public Store(List<Toyable> toys) {
         this.toys = new LinkedList<>(toys);
-        shelvesToys = new LinkedList<>();
-        FillShelvesToys(toys);
     }
 
     public List<Toyable> getToys() {
@@ -25,7 +23,6 @@ public class Store implements Storeble {
 
     public void AddToy(Toyable inToy) {
         RefactorToysWeight(inToy);
-        FillShelvesToys(this.toys);
     }
 
     public Toyable GetToy(Toyable inToy) {
@@ -33,14 +30,13 @@ public class Store implements Storeble {
         int saveIndex = -1;
         if (this.toys.contains(inToy)) {
             for (Toyable item : this.toys) {
-                index++;
                 if (item.equals(inToy)) {
                     item.ReduceAmount();
-                    FillShelvesToys(this.toys);
                     if (item.getQuantity() == 0) {
                         saveIndex = index;
                     }
                 }
+                index++;
             }
             if (saveIndex != -1 && this.toys.get(saveIndex).getQuantity() == 0) {
                 this.toys.remove(saveIndex);
@@ -51,12 +47,6 @@ public class Store implements Storeble {
         return null;
     }
 
-    private void FillShelvesToys(List<Toyable> toys) {
-        shelvesToys = new LinkedList<>();
-        for (Toyable item : toys) {
-            shelvesToys.add(FillToysQueue(item));
-        }
-    }
 
     private PriorityQueue<Toyable> FillToysQueue(Toyable item) {
         PriorityQueue<Toyable> out = new PriorityQueue<>();
