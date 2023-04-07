@@ -5,7 +5,7 @@ import core.toy.Toyable;
 import fileController.ReadFile;
 import fileController.WriteFile;
 import lottery.Lottery;
-import view.Viewable;
+import view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,7 @@ public class Controller<T extends Toyable> {
     private final WriteFile fileWriter;
     private final ReadFile fileReader;
 
+
     public Controller(String fileRead, String fileWrite) {
         fileWriter = new WriteFile(fileWrite);
         fileReader = new ReadFile(fileRead);
@@ -22,35 +23,35 @@ public class Controller<T extends Toyable> {
 
     public void run() {
         List<Toyable> fellOutToys = new ArrayList<>();
-        Viewable.startRead();
+        System.out.println(View.startRead());
         List<Toyable> toys = fileReader.readJson();
-        Viewable.done();
+        System.out.println(View.done());
 
-        Viewable.createStore();
+        System.out.println(View.createStore());
         Store store = new Store(toys);
-        Viewable.done();
+        System.out.println(View.done());
 
-        Viewable.createLottery();
+        System.out.println(View.createLottery());
         Lottery lottery = new Lottery(store);
-        Viewable.done();
+        System.out.println(View.done());
 
-        Viewable.startLottery();
+        System.out.println(View.startLottery());
         int lotteryDraws = 10;
         for (int i = 0; i < lotteryDraws; i++) {
             Toyable toy = lottery.GetToy();
-            Viewable.raundLottery(i,toy);
+            System.out.println(View.raundLottery(i,toy));
             fellOutToys.add(toy);
             try {
-                TimeUnit.SECONDS.sleep(3);
+                TimeUnit.SECONDS.sleep(1);
             } catch (Exception ex){
                 System.out.println(ex.getMessage());
             }
 
         }
-        Viewable.done();
+        System.out.println(View.done());
 
-        Viewable.writeLottery();
+        System.out.println(View.writeLottery());
         fileWriter.WriteToFile(fellOutToys);
-        Viewable.done();
+        System.out.println(View.done());
     }
 }
