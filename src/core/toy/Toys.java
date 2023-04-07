@@ -48,4 +48,10 @@ public class Toys extends BaseToy implements Toyable, Comparable<BaseToy> {
     public void ReduceAmount() {
         this.quantity--;
     }
+
+    @Override
+    public String toString() {
+        return  super.id + ";" + super.name +";" + super.weight + ";" + this.quantity;
+
+    }
 }

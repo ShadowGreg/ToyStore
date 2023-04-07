@@ -4,9 +4,9 @@ package core.toy;
 public class BaseToy {
 
 
-    private final int id;
-    private final String name;
-    private int weight;
+    protected final int id;
+    protected String name;
+    protected int weight;
 
     public BaseToy(int id, String name, int weight) {
         this.id = id;
