@@ -1,4 +1,3 @@
-import core.toy.BaseToy;
 import core.toy.Toyable;
 import core.toy.Toys;
 import fileController.WriteFile;
@@ -28,7 +27,7 @@ public class WriteFileTest {
     public void WriteFile_test() {
         Setup();
 
-        writeFile.WriteFile(toys);
+        writeFile.WriteToFile(toys);
 
         Assert.assertNotNull(toys);
     }
