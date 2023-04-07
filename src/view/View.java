@@ -22,7 +22,7 @@ public class View{
     }
 
     public static String raundLottery(int i, Toyable toy){
-        return String.format("В %d раунде лоттерии выпала игрушка>\n \"%s \n",i+1, toy.toString().split(";")[1]);
+        return String.format("В %d раунде лоттерии выпала игрушка>\n > %s \n",i+1, toy.toString().split(";")[1]);
     }
 
     public static String writeLottery() {

@@ -62,12 +62,13 @@ public class StoreTest {
     @Test
     public void GetToy_when_is_the_null_toy_in_queue_test() {
         Setup();
-        Toyable expectedToy = new Toys(2, "трэк", 30, 1);
+        Toyable testToy = new Toys(2, "трэк", 30, 1);
+        Toyable expectedToy = new Toys(0, "В этот раз не выпало ничего, попробуй ещё раз", 0, 0);
 
-        Toyable actualToy = store.GetToy(expectedToy);
-        actualToy = store.GetToy(expectedToy);
+        Toyable actualToy = store.GetToy(testToy);
+        actualToy = store.GetToy(testToy);
 
-        Assert.assertEquals(null, actualToy);
+        Assert.assertEquals(expectedToy, actualToy);
     }
 
     @Test

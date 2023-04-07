@@ -1,6 +1,7 @@
 package core.store;
 
 import core.toy.Toyable;
+import core.toy.Toys;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -44,7 +45,7 @@ public class Store implements Storeble {
 
             return inToy;
         }
-        return null;
+        return new Toys(0,"В этот раз не выпало ничего, попробуй ещё раз",0,0);
     }
 
     private void RefactorToysWeight(Toyable inToy) {
