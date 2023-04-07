@@ -6,12 +6,11 @@ import core.toy.Toys;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.PriorityQueue;
 import java.util.stream.IntStream;
 
 public class Store implements Storeble {
 
-    private List<Toyable> toys;
+    private final List<Toyable> toys;
 
 
     public Store(List<Toyable> toys) {
@@ -62,7 +61,7 @@ public class Store implements Storeble {
                 .flatMapToInt(IntStream::of)
                 .sum();
 
-        ResizeWeights(totalSum, existingWeights, newWeights, (double) newTotalSum);
+        ResizeWeights(totalSum, existingWeights, newWeights, newTotalSum);
 
         int tempSum = newWeights.stream()
                 .flatMapToInt(IntStream::of)
