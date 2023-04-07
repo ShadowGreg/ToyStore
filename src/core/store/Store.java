@@ -47,15 +47,6 @@ public class Store implements Storeble {
         return null;
     }
 
-
-    private PriorityQueue<Toyable> FillToysQueue(Toyable item) {
-        PriorityQueue<Toyable> out = new PriorityQueue<>();
-        for (int i = 0; i < item.getQuantity(); i++) {
-            out.add(item);
-        }
-        return out;
-    }
-
     private void RefactorToysWeight(Toyable inToy) {
         int totalSum = 100;
         List<Integer> existingWeights = new ArrayList<>();

@@ -9,6 +9,11 @@ public class Toys extends BaseToy implements Toyable, Comparable<BaseToy> {
         this.quantity = quantity;
     }
 
+    public Toys(String id, String name, String weight, String quantity) {
+        super(Integer.parseInt(id), name,Integer.parseInt(weight));
+        this.quantity = Integer.parseInt(quantity);
+    }
+
     @Override
     public int getQuantity() {
         return quantity;

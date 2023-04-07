@@ -2,17 +2,19 @@ package core.toy;
 
 
 public interface Toyable {
-    public int getWeight();
+    int getWeight();
 
-    public void setWeight(int inWeight);
+    void setWeight(int inWeight);
 
-    public int getQuantity();
+    int getQuantity();
 
-    public int compareTo(BaseToy o);
+    int compareTo(BaseToy o);
 
-    public boolean equals(Object obj);
+    boolean equals(Object obj);
 
-    public int hashCode();
+    int hashCode();
 
-    public void ReduceAmount();
+    void ReduceAmount();
+
+    String toString();
 }
